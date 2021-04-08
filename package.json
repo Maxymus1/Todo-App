@@ -1,0 +1,29 @@
+{
+    "name": "todo-app",
+    "version": "1.0.0",
+    "description": "Una app de practica de js",
+    "main": "src/index.html",
+    "scripts": {
+        "watch:style": "sass src/index/styles/style.scss:src/index/styles/style.css --watch",
+        "build": "npm run build:style:main",
+        "build:style:main": "sass src/index/styles/style.scss:src/index/styles/style.css",
+        "build:parallel": "npm-run-parallel build:style:home build:style:main",
+        "dev": "npm run build && npm-run-parallel watch:style server",
+        "server": "live-server src --port=3030"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Maxymus1/Todo-App.git"
+    },
+    "author": "Maxi Lanta",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Maxymus1/Todo-App/issues"
+    },
+    "homepage": "https://github.com/Maxymus1/Todo-App#readme",
+    "devDependencies": {
+        "live-server": "^1.2.1",
+        "npm-run-parallel": "^0.6.0",
+        "sass": "^1.32.8"
+    }
+}

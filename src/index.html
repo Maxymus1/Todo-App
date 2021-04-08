@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="index\styles\normalice.css">
+    <link rel="stylesheet" href="index\styles\style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Material-icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="nav">
+        <div class="nav-title">
+            <h1 class="nav-title-name">
+                Todo App
+            </h1>
+        </div>
+        <div class="nav-entry">
+            <input id="entry" type="text" class="nav-entry-textbox" placeholder="Enter a new task to do" autocomplete="off">
+            <input type="button" class="nav-entry-create" value="Create" onclick="newTask()">
+        </div>
+
+    </div>
+
+    <div class="conteiner">
+
+        <div class="conteiner-sort">
+            <span class="material-icons sort">
+                arrow_upward
+            </span>
+            <p class="sort">Sort</p>
+        </div>
+
+        <ul class="list" id="list">
+   
+        </ul>
+    </div>
+
+    
+    <template id="task-template">
+        <li class="task">
+            <div class="label-box">
+                <label class="task-label on-select">
+                    <input class="task-checkbox as" onclick="chequeado(this)" type="checkbox" name="done">
+                    <span>Make code</span>
+                </label>
+            </div>
+            <button class="delete" onclick="deleted(this)">Delete</button>
+        </li>
+    </template>
+    <script type="text/javascript" src="index\scripts\script.js"></script>
+</body>
+
+</html>
