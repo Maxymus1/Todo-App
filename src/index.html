@@ -23,24 +23,19 @@
                 Todo App
             </h1>
         </div>
-        <div class="nav-entry">
+        <form class="nav-entry">
             <input id="entry" type="text" class="nav-entry-textbox" placeholder="Enter a new task to do" autocomplete="off">
-            <input type="button" class="nav-entry-create" value="Create" onclick="newTask()">
-        </div>
-
+            <input type="submit" class="nav-entry-create" value="Create">
+        </form>
     </div>
 
     <div class="conteiner">
-
         <div class="conteiner-sort">
-            <span class="material-icons sort">
-                arrow_upward
-            </span>
+            <span class="material-icons sort">arrow_upward</span>
             <p class="sort">Sort</p>
         </div>
 
         <ul class="list" id="list">
-   
         </ul>
     </div>
 
@@ -49,14 +44,15 @@
         <li class="task">
             <div class="label-box">
                 <label class="task-label on-select">
-                    <input class="task-checkbox as" onclick="chequeado(this)" type="checkbox" name="done">
+                    <input class="task-checkbox as" type="checkbox" name="done">
                     <span>Make code</span>
                 </label>
             </div>
-            <button class="delete" onclick="deleted(this)">Delete</button>
+            <button class="delete">Delete</button>
         </li>
     </template>
-    <script type="text/javascript" src="index\scripts\script.js"></script>
+
+    <script type="text/javascript" src="index/scripts/script.js"></script>
 </body>
 
 </html>
