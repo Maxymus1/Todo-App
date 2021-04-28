@@ -9,7 +9,8 @@
         "build:style:main": "sass src/index/styles/style.scss:src/index/styles/style.css",
         "build:parallel": "npm-run-parallel build:style:home build:style:main",
         "dev": "npm run build && npm-run-parallel watch:style server",
-        "server": "live-server src --port=3030"
+        "server": "live-server src --port=3030",
+        "babel": "babel src/index/scripts -d src/lib "
     },
     "repository": {
         "type": "git",
@@ -22,7 +23,14 @@
     },
     "homepage": "https://github.com/Maxymus1/Todo-App#readme",
     "devDependencies": {
+        "@babel/cli": "^7.13.14",
+        "@babel/core": "^7.13.15",
+        "@babel/preset-env": "^7.13.15",
+        "babel-preset-minify": "^0.5.1",
+        "core-js": "^3.10.1",
+        "install": "^0.13.0",
         "live-server": "^1.2.1",
+        "npm": "^7.9.0",
         "npm-run-parallel": "^0.6.0",
         "sass": "^1.32.8"
     }
