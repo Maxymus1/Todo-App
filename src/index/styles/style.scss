@@ -96,6 +96,10 @@ body {
     .sort {
         margin: 0 20px 0 0;
         font-size: 43px;
+        cursor: pointer;
+    }
+    .sort:hover{
+        color: lighten($color: #A497C1, $amount: 10%);
     }
 }
 
@@ -222,6 +226,7 @@ body {
 
 @media (min-width: 667px) and (max-width: 900px) {
     .nav {
+        height: 20vw;
         &-title-name {
             font-size: 5.2vw;
         }
@@ -239,7 +244,7 @@ body {
         }
     }
     .task {
-        height: 70px;
+        height: 10vw;
         &-label {
             font-size: 4.5vw;
             padding-left: 20px;
@@ -266,7 +271,9 @@ body {
 
 @media (max-width: 667px) {
     .nav {
-        padding-top: 10%;
+        height: 20vw;
+        height: 100px;
+        width: 100%;
         max-height: 175px;
         display: flex;
         flex-direction: column;
@@ -278,7 +285,8 @@ body {
         }
         &-entry {
             width: 70%;
-            padding-top: 5%;
+            height: 10vw;
+            min-height: 40px;
             font-size: 4.5vw;
             &-textbox {
                 padding: 0 5%;
@@ -291,12 +299,13 @@ body {
         }
     }
     .conteiner {
+        padding-top: 20px;
         height: 70vh;
     }
     .task {
         height: 50px;
         &-label {
-            font-size: 4.5vw;
+            font-size: 5vw;
             padding-left: 10px;
         }
         &-checkbox {

@@ -6,6 +6,8 @@ const entry = document.querySelector('#entry');
 const lista = document.querySelector('#list');
 const form = document.querySelector('.nav-entry');
 const taskTemplate = document.getElementById('task-template');
+let tasks = [];
+let completed;
 
 form.addEventListener("submit", (e)=>{
     e.preventDefault();
@@ -19,15 +21,16 @@ document.querySelectorAll('.sort').forEach(ele => ele.onclick = function() {
 window.onload = load;
 
 function load() {
-    let keys = Object.keys(localStorage);
-    if (keys.length === 0 ) {
+    tasks = Object.keys(localStorage);
+    if (tasks.length === 0 ) {
         create('Make code');
     }
-    for(let tk of keys){
+    for(let tk of tasks){
         create(tk);
     }
     checked();
     lista.scrollTo(0, 0);
+    completed = true;
 }
 
 function newTask() {
@@ -46,6 +49,7 @@ function create(strings) {
     lista.querySelectorAll("input").forEach(el => el.addEventListener( "click" , function() {chequeado(this)} ));
     lista.querySelectorAll(".delete").forEach(el => el.addEventListener( "click" , function() {deleted(this)} ))
     
+    tasks = Object.keys(localStorage);
 }
 
 function renderPill(texto) {
@@ -66,17 +70,16 @@ function checked() {
 }
 
 function sort() {
-    let tasks = [];
-    let keys = Object.keys(localStorage);
-    for (var i = 0; i<keys.length; i++) {
-        tasks[i] = keys[i];
-    }
-    let revertTasks = invert(tasks);
+    if(completed)tasks.reverse();
+
     deletedAll();
-    localStorage.clear();
-    for(let tk of revertTasks){
+
+    for(let tk of tasks){
         create(tk);
     }
+    checked();
+    completed = !completed;
+    lista.scrollTo(0, 0);
 }
 
 function invert(arr) {
@@ -101,9 +104,8 @@ function chequeado(inst) {
 
 function deletedAll() {
     document.querySelectorAll('.delete').forEach(elem => {
-        deleted(elem);
+       elem.parentElement.remove();
     });
-    localStorage.clear();
 }
 
 function deleted(inst) {
